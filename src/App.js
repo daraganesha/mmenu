@@ -17,13 +17,13 @@ class App extends React.Component {
 	render() {
 		return (
 			<div className="container">
-				container
-				<div className={this.state.menuopen ? 'menu open' : 'menu'} onClick={() => this.handleClick()}>
-					menu
-				</div>
+				<div className={this.state.menuopen ? 'menu open' : 'menu'} onClick={() => this.handleClick()} />
 				<div className={this.state.menuopen ? 'main open' : 'main'}>
-					main
-					<button onClick={() => this.handleClick()}>X</button>
+					<div className="hamburger" onClick={() => this.handleClick()}>
+						<span />
+						<span />
+						<span />
+					</div>
 				</div>
 			</div>
 		);

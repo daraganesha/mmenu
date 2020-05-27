@@ -8,21 +8,33 @@ class App extends React.Component {
 			menuopen: false
 		};
 	}
-
-	handleClick() {
+	handleClick(){
 		this.setState({ ...this.state, menuopen: !this.state.menuopen });
-		console.log(this.state.menuopen);
 	}
 
 	render() {
 		return (
 			<div className="container">
-				<div className={this.state.menuopen ? 'menu open' : 'menu'} onClick={() => this.handleClick()} />
+				<div className={this.state.menuopen ? 'menu open' : 'menu'} onClick={() => this.handleClick()}>
+					<ul>
+						<li>Menu 1</li>
+						<li>Menu 2</li>
+						<li>Menu 3</li>
+					</ul>
+				</div>
+
 				<div className={this.state.menuopen ? 'main open' : 'main'}>
-					<div className="hamburger" onClick={() => this.handleClick()}>
-						<span />
-						<span />
-						<span />
+					<div 
+						className={this.state.menuopen ? 'hamburger closed' : 'hamburger opened' }
+						onClick={() =>  this.handleClick()}>
+						<div className="openedsymbol">
+							<span />
+							<span />
+							<span />
+						</div>
+						<div className="closedsymbol">
+							&times;
+						</div>
 					</div>
 				</div>
 			</div>

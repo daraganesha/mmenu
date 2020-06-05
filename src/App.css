@@ -76,6 +76,13 @@
 	position: absolute;
 }
 
+.closedsymbol {
+	left: 12px;
+	width: 45px;
+	top: 1px;
+	height: 40px;
+}
+
 .hamburger span {
 	width: 35px;
 	display: block;

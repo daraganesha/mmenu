@@ -1,0 +1,81 @@
+$menuWidthOpen: 300px;
+$menuWidthClosed: 50px;
+
+html,
+body {
+  position: relative;
+  height: 100%;
+}
+
+#root {
+  height: 100%;
+}
+.container {
+  .menu {
+    background: blue;
+    & > ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      text-align: center;
+      background: yellow;
+
+      li {
+        margin: 0;
+        margin-right: 10px;
+        padding: 10px;
+        width: 120px;
+
+        background: red;
+        display: inline-block;
+        position: relative;
+
+        &:hover {
+          ul.submenu {
+            display: block;
+          }
+        }
+        ul.submenu {
+          display: none;
+          position: absolute;
+          left: 0;
+          padding: 0;
+        }
+      }
+    }
+  }
+}
+.container2 {
+  background: blue;
+  margin-left: $menuWidthClosed;
+  padding: 30px;
+  min-height: 100%;
+
+  .menu {
+    background: red;
+    position: fixed;
+    width: $menuWidthClosed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+
+    ul {
+      overflow: hidden;
+    }
+    .hamburger {
+      background: yellow;
+      position: absolute;
+      left: 100%;
+      width: 30px;
+      height: 30px;
+    }
+  }
+
+  &.menu-opened {
+    margin-left: $menuWidthOpen;
+
+    .menu {
+      width: $menuWidthOpen;
+    }
+  }
+}
